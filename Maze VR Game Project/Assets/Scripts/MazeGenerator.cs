@@ -36,7 +36,7 @@ public class MazeGenerator : MonoBehaviour
                 Cell _cell = Instantiate<Cell>(cellPrefab, this.transform);
                 _cell.index = new Vector2Int(x, y);
                 _cell.name = "cell_" + x + "_" + y;
-                _cell.transform.localPosition = new Vector3(x * 2, 0, y * 2);                                   // Maze 부모 객체 위치에 기반해서 생성.
+                _cell.transform.localPosition = new Vector3(x * 5, 0, y * 5);                                   // Maze 부모 객체 위치에 기반해서 생성.
 
                 cellMap[x, y] = _cell;
             }
