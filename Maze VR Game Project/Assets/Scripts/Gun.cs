@@ -45,7 +45,7 @@ public class Gun : MonoBehaviour
 
 
     /// <summary>
-    /// 발사 처리를 시도하는 함수.
+    /// 발사 처리를 시도하는 함수.  
     /// </summary>
     public void Fire()
     {
