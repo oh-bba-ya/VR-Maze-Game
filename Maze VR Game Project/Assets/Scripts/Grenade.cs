@@ -13,6 +13,8 @@ public class Grenade : MonoBehaviour
     public float m_ExplosionRadius = 5f;         // 폭발 반경.
     public float m_TimeToExploade = 5f;         // 설정한 시간 후에 폭발.
     public Text m_GrenadeText;
+    public AudioSource m_ExplosionAudioSource;
+    public AudioClip m_ExplosionClip;
 
     // 폭발 카운드 다운이 시작된 후
     private bool m_Cooking = false;              // true가 될시 지연 시간 후에 폭발.
@@ -56,6 +58,10 @@ public class Grenade : MonoBehaviour
         // 파티클 효과를 생성 재생
         ParticleSystem explosionEffect = Instantiate(m_ExplosionEffectPrefab, transform.position, transform.rotation);
         explosionEffect.Play();
+
+        // 폭발 소리 재생.
+        m_ExplosionAudioSource.clip = m_ExplosionClip;
+        m_ExplosionAudioSource.Play();
 
         // ParticleSystem.main.duration 파티클이 가지고 있는 지속 유지시간. 후 파괴
         Destroy(explosionEffect.gameObject, explosionEffect.main.duration);

@@ -12,6 +12,10 @@ public class MazeGenerator : MonoBehaviour
     private Cell[,] cellMap;
     private Stack<Cell> cellHisttoryStack;
 
+
+    // 갈수 있는 경로
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +33,8 @@ public class MazeGenerator : MonoBehaviour
     {
         cellMap = new Cell[width, height];
         cellHisttoryStack = new Stack<Cell>();
+  
+
         for (int x = 0; x < width; x++)
         {
             for(int y = 0; y < height; y++)
@@ -39,6 +45,7 @@ public class MazeGenerator : MonoBehaviour
                 _cell.transform.localPosition = new Vector3(x * 5, 0, y * 5);                                   // Maze 부모 객체 위치에 기반해서 생성.
 
                 cellMap[x, y] = _cell;
+                
             }
         }
     }
