@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Temp Player
+  - Level
+  - Bullet
+  - Point
   layers:
   - Default
   - TransparentFX

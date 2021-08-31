@@ -110,13 +110,11 @@ public class EnemyAi : MonoBehaviour
             {
                 RaycastHit hit;
                 Debug.DrawRay(m_FireTransform.position, m_FireTransform.forward * m_AttackDis, Color.blue, 0.3f);
+                
                 if(Physics.Raycast(m_FireTransform.position,m_FireTransform.forward, out hit, m_AttackDis))
                 {
-                    if(hit.collider.gameObject.tag == "Player")
-                    {
-                        hit.transform.GetComponent<MeshRenderer>().material.color = Color.red;
-                        state = State.ATTACK;
-                    }
+                    state = State.ATTACK;
+
                 }          
             }
             else if (dis <= m_TraceDis)

@@ -25,7 +25,9 @@ public class MoveAgent : MonoBehaviour
     // 순찰 여부 판단
     private bool m_Patolling;
 
-    
+    public float health = 100;
+
+
 
 
 
@@ -76,6 +78,9 @@ public class MoveAgent : MonoBehaviour
         m_Agent.destination = pos;
         m_Agent.isStopped = false;
     }
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -145,4 +150,6 @@ public class MoveAgent : MonoBehaviour
             MoveWayPoint();
         }
     }
+
+
 }

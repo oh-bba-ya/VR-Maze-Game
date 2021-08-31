@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    public float slowdownFactor = 0.05f;
-    public float slowdownLength = 2f;
-    public void SetTimeScale()
-    {
-        Time.timeScale = slowdownFactor;
+    public AudioSource m_AudioSource;
+    public AudioClip m_AudioClip;
 
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject.tag == "Bullet")
+        {
+            m_AudioSource.clip = m_AudioClip;
+            m_AudioSource.Play();
+        }
     }
 
-    public void ResetTimeScale()
-    {
-        Time.timeScale = 1;
-    }
+
 
 }

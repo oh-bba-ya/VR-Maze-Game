@@ -6,7 +6,7 @@ public class EnemySpawn : MonoBehaviour
 {
 
     public static EnemySpawn instance;
-    public GameObject m_SpawnPoints;
+    public GameObject[] m_SpawnPoints;
     public GameObject m_MonsterPrefab;
 
 
@@ -30,7 +30,8 @@ public class EnemySpawn : MonoBehaviour
             t_Object.SetActive(false);
         }
 
-        StartCoroutine(MonsterSpawn());
+
+        StartCoroutine(CoroutineEnemySpawn());
     }
 
     public void InsertQueue(GameObject p_Object)
@@ -48,15 +49,16 @@ public class EnemySpawn : MonoBehaviour
     }
 
 
-    IEnumerator  MonsterSpawn()
+    IEnumerator CoroutineEnemySpawn()
     {
         while (!isGameOver)
         {
-            if(m_CurMonster < m_MaxMonster)
+            if (m_CurMonster < m_MaxMonster)
             {
                 yield return new WaitForSeconds(m_SpanwTime);
-                int idx = Random.Range(0, 6);
-                Transform pos = m_SpawnPoints.transform.GetChild(idx);
+                int idx = Random.Range(0, 5);
+                Transform pos = m_SpawnPoints[idx].transform;
+                Debug.Log("name : " + pos.name);
                 GameObject t_Object = GetQueue();
                 t_Object.transform.position = pos.position;
                 ++m_CurMonster;
@@ -68,7 +70,7 @@ public class EnemySpawn : MonoBehaviour
             }
         }
 
-        
+
     }
 
 }

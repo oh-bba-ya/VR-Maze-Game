@@ -4,24 +4,19 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public EnemyFire m_enemyFire;
 
-    private GameObject m_bullet;
-
-    private void Start()
-    {
-        m_bullet = this.gameObject;
-        m_enemyFire = m_enemyFire.GetComponent<EnemyFire>();
-    }
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
             Debug.Log("Player Hit");
+            EnemyFire.m_instance.InsertQueue(gameObject);
         }
-        else
+        else if(other.tag == "Level")
         {
-            Debug.Log("else Hit");
+            Debug.Log("Bullet Destory");
+            EnemyFire.m_instance.InsertQueue(gameObject);
         }
+
     }
 }

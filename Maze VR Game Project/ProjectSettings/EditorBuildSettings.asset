@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: be56560bcf2ad7d49b359ed2173a8312
+    path: Assets/Scenes/Create Maze.unity
+    guid: 123fda18ba2007446baa9723f33ecb89
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: aef241f24a6da3c4193e36891b2953e1, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: ae10af1bc43a54c4d9faa276b36c3b85, type: 2}
