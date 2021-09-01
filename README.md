@@ -224,7 +224,7 @@ private void BatchCells()
 ------------------------
 ### Gun
 
-**1.  Fire
+**1.  Fire**
 ~~~
     /// <summary>
     /// 발사 처리를 시도하는 함수.  
@@ -247,7 +247,7 @@ private void BatchCells()
     }
 ~~~
 
-**2. Shot
+**2. Shot**
 ~~~
     /// <summary>
     /// 실제 발사 처리를 하는 부분.
@@ -287,7 +287,7 @@ private void BatchCells()
     }
 ~~~
 
-**3. ShotEffect
+**3. ShotEffect**
 ~~~
     /// <summary>
     /// 발사 이펙트를 재생하고 총알 궤적을 잠시 그렸다가 끄는 함수.
@@ -328,7 +328,7 @@ private void BatchCells()
     }
 ~~~
 
-**4. UpdateUI
+**4. UpdateUI**
 ~~~
     /// <summary>
     /// 총의 탄약 UI에 남은 탄약을 갱신해준다.
@@ -350,7 +350,7 @@ private void BatchCells()
     }
 ~~~
 
-**5. Reload
+**5. Reload**
 ~~~
     /// <summary>
     /// 재장전을 시도.
@@ -364,7 +364,7 @@ private void BatchCells()
     }
 ~~~
 
-**6. ReloadRoutine
+**6. ReloadRoutine**
 ~~~
     /// <summary>
     /// 실제 재장전 처리가 진행되는 곳.
