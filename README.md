@@ -391,7 +391,7 @@ private void BatchCells()
 ~~~
 
 ### IDamageable.cs
-1. InterFace 스크립트로서 Damaged를 입는 추상 클래스로서 사용된다.
+**1. InterFace 스크립트로서 Damaged를 입는 추상 클래스로서 사용된다.**
 ~~~
 void OnDamage(float damageAmount);
 ~~~
@@ -399,7 +399,7 @@ void OnDamage(float damageAmount);
 ### EnemySpawn.cs
 Object pooling을 사용하여 Enemy Prefabs 할당하고 파괴하는 대신, 필요할 때만 Queue에서 GetQueue()함수를  사용하고 , Player Gun에 의해 사라진 개체는 InsertQueue() 함수를 사용하여 Enqueue하였다.
 
-1. Queue Initialize
+**1. Queue Initialize**
 ~~~
     void Start()
     {
@@ -417,7 +417,7 @@ Object pooling을 사용하여 Enemy Prefabs 할당하고 파괴하는 대신, �
     }
 ~~~
 
-2. Object Pooling
+**2. Object Pooling**
 ~~~
     public void InsertQueue(GameObject p_Object)
     {
@@ -434,7 +434,7 @@ Object pooling을 사용하여 Enemy Prefabs 할당하고 파괴하는 대신, �
     }
 ~~~
 
-3. CoroutineEnemySpawn()
+**3. CoroutineEnemySpawn()**
 ~~~
     /// <summary>
     /// 코루틴을 통한 적 생성.
@@ -469,7 +469,7 @@ Object pooling을 사용하여 Enemy Prefabs 할당하고 파괴하는 대신, �
 ### Gun.cs
 Player의 Weapon
 
-1. Fire
+**1. Fire**
 ~~~
     /// <summary>
     /// 발사 처리를 시도하는 함수.  
@@ -492,7 +492,7 @@ Player의 Weapon
     }
 ~~~
 
-2. Shot
+**2. Shot**
 ~~~
     /// <summary>
     /// 실제 발사 처리를 하는 부분.
@@ -532,7 +532,7 @@ Player의 Weapon
     }
 ~~~
     
-3. ShotEffect
+**3. ShotEffect**
 ~~~
     /// <summary>
     /// 발사 이펙트를 재생하고 총알 궤적을 잠시 그렸다가 끄는 함수.
@@ -573,7 +573,7 @@ Player의 Weapon
     }
 ~~~
 
-4. Update UI
+**4. Update UI**
 ~~~
     /// <summary>
     /// 총의 탄약 UI에 남은 탄약을 갱신해준다.
@@ -595,7 +595,7 @@ Player의 Weapon
     }
 ~~~
 
-5. ReLoad
+**5. ReLoad**
 ~~~
     /// <summary>
     /// 재장전을 시도.
@@ -637,7 +637,7 @@ Player의 Weapon
 ### Grenade.cs
 Player의 Weapon 수류탄
 
-1. CookGrenade
+**1. CookGrenade**
 ~~~
     /// <summary>
     /// 수류탄 Set (카운트 다운 시작) , Trigger 버튼 클릭 후 나타남.
@@ -658,7 +658,7 @@ Player의 Weapon 수류탄
     }
 ~~~
 
-2. Explode
+**2. Explode**
 ~~~
     /// <summary>
     /// 실제 폭발 처리를 하는 부분.
@@ -701,7 +701,7 @@ Player의 Weapon 수류탄
 ### EnemyAi.cs , MoveAgent.cs 
 Enemy의 Navmesh를 이용한 움직임 구현
 
-1. Enemy State 관리 (Trace , Patrol, Attack , Die)
+**1. Enemy State 관리 (Trace , Patrol, Attack , Die)**
 ~~~
     private void OnEnable()
     {
@@ -782,7 +782,7 @@ Enemy의 Navmesh를 이용한 움직임 구현
 ~~~
 
 
-2. Property
+**2. Property**
 ~~~
     // Patrolling 프로퍼티 정의
     public bool patrolling
