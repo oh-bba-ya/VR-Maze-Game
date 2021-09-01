@@ -222,7 +222,7 @@ private void BatchCells()
     }                                
 ~~~
 ------------------------
-### Gun
+### Gun.cs
 
 **1.  Fire**
 ~~~
@@ -388,4 +388,10 @@ private void BatchCells()
         UpdateUI();
 
     }
+~~~
+
+### IDamageable.cs
+1. InterFace 스크립트로서 Damaged를 입는 추상 클래스로서 사용된다.
+~~~
+void OnDamage(float damageAmount);
 ~~~
