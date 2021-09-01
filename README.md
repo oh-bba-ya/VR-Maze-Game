@@ -27,9 +27,9 @@ VR-Maze-Game
 
 #### Code
 1. BatchCells  
-/// <summary>
-/// 입력받은 Width , height 만큼 Cell 생성.
-/// </summary>
+/// <summary>  
+/// 입력받은 Width , height 만큼 Cell 생성.  
+/// </summary>  
 private void BatchCells()
 {
     cellMap = new Cell[width, height];
