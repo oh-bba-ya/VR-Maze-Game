@@ -17,6 +17,10 @@ VR-Maze-Game
 3. Weapon , Shield
 4. VR , Inventory
 
+#### 조작 방법
+1. 오른쪽 컨트롤러의 엄지스틱을 사용하여 화면을 회전시킬 수 있습니다.
+
+
 
 ## 클래스
 ### Cell.cs
