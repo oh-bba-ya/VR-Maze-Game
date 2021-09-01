@@ -19,7 +19,32 @@ VR-Maze-Game
 
 
 ## 클래스
-### Maze generator
+### Cell.cs
+
+1. ShowWalls
+~~~
+    public void ShowWalls()
+    {
+        forwardWall.SetActive(isForwardWall);
+        BackWall.SetActive(isBackWall);
+        leftWall.SetActive(isLeftWall);
+        rightWall.SetActive(isRightWall);
+    }
+~~~
+
+2. CheckAllWall
+~~~
+    /// <summary>
+    /// 모든 4면이 활성화 되어 있는지 체크.
+    /// </summary>
+    /// <returns></returns>
+    public bool CheckAllWall()
+    {
+        return isForwardWall && isBackWall && isRightWall && isLeftWall;
+    }
+~~~
+
+### Maze generator.cs
 #### 설명
 1. 게임 실행시 자동적으로 미로가 생성되며 미로 형태는 랜덤으로 생성됩니다.
 
