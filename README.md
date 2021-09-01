@@ -40,6 +40,9 @@ VR-Maze-Game
 
 <img src="https://user-images.githubusercontent.com/49023743/131732890-cea9c189-d916-470d-9db2-7862896d5440.mp4">
 
+
+### Enemy
+
 ## 클래스
 ### Cell.cs
 
