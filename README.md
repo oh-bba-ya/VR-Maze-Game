@@ -26,7 +26,7 @@ VR-Maze-Game
 1. 게임 실행시 자동적으로 미로가 생성되며 미로 형태는 랜덤으로 생성됩니다.
 
 #### Code
-1. BatchCells
+1. BatchCells  
 /// <summary>
 /// 입력받은 Width , height 만큼 Cell 생성.
 /// </summary>
