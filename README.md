@@ -17,13 +17,17 @@ VR-Maze-Game
 3. Weapon , Shield
 4. VR , Inventory
 
-#### 조작 방법
+#### 구성 요소
 1. 오른쪽 컨트롤러의 엄지스틱을 사용하여 화면을 회전시킬 수 있습니다.
 <img src="https://user-images.githubusercontent.com/49023743/131713105-bc3acfbc-a6d0-4660-8756-f21598824148.mp4">
 
 2. 컨트롤러를 통해 텔레포트와 기본이동을 할 수 있습니다.
 <img src="https://user-images.githubusercontent.com/49023743/131715537-812a5e8b-096d-4cde-ac2b-cc2b3272f233.mp4">
 
+3. Trigger 버튼을 통해 무기를 사용할 수 있습니다.
+<img src="https://user-images.githubusercontent.com/49023743/131731976-da523144-3c86-411b-b223-f683a5c58a3e.mp4">
+
+<img src="https://user-images.githubusercontent.com/49023743/131731983-752bef6e-df3b-4a0a-9dd7-7bb03ffef8d9.mp4">
 
 ## 클래스
 ### Cell.cs
