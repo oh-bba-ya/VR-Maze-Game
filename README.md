@@ -19,9 +19,7 @@ VR-Maze-Game
 
 #### 구성 요소
 ### Level
-1. 게임 실행마다 미로의 구조가 바뀝니다.
-
-
+1. 게임 실행마다 미로의 구조가 바뀝니다. 출입문을 열고 미로에 입장할 수 있습니다.
 
 <img src="https://user-images.githubusercontent.com/49023743/131736408-27ab6b36-77fb-4b51-812f-b232ed5571e7.PNG" width = "700" height = "500">
 
