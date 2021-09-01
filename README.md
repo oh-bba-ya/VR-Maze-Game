@@ -26,7 +26,7 @@ VR-Maze-Game
 1. 게임 실행시 자동적으로 미로가 생성되며 미로 형태는 랜덤으로 생성됩니다.
 
 #### Code
-1. BatchCells  
+**1. BatchCells  **
 ~~~
 /// <summary>
 /// 입력받은 Width , height 만큼 Cell 생성.
@@ -54,7 +54,7 @@ private void BatchCells()
 }  
 ~~~
   
-2. MakeMaze :
+**2. MakeMaze :**
 ~~~
     /// <summary>
     /// startCell 상하좌우 이웃 Cell들을 배열로 입력받아 배열 범위만큼의 랜덤하게 선택하여 Cell을 연결한다.
@@ -84,7 +84,7 @@ private void BatchCells()
     }
 ~~~
   
-  3. GetNeighborCells
+  **3. GetNeighborCells**
 ~~~
     /// <summary>
     /// 주변(기준 cell 의 상하좌우)을 탐색하는 함수.
@@ -150,7 +150,7 @@ private void BatchCells()
     }
  ~~~
   
-4. ConnectCells
+**4. ConnectCells**
 ~~~
     /// <summary>
     /// 방문한 cell 과 주변과 이웃한 cell 의 벽을 삭제
