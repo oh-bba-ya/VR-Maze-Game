@@ -51,7 +51,8 @@ private void BatchCells()
 }  
 ~~~
   
-  2. MakeMaze
+2. MakeMaze :
+~~~
     /// <summary>
     /// startCell 상하좌우 이웃 Cell들을 배열로 입력받아 배열 범위만큼의 랜덤하게 선택하여 Cell을 연결한다.
     /// </summary>
@@ -78,6 +79,7 @@ private void BatchCells()
             }
         }
     }
+~~~
   
   3. GetNeighborCells
     /// <summary>
