@@ -19,6 +19,12 @@ VR-Maze-Game
 
 #### 구성 요소
 ### Level
+1. 게임 실행마다 미로의 구조가 바뀝니다.
+
+<img src="https://user-images.githubusercontent.com/49023743/131736408-27ab6b36-77fb-4b51-812f-b232ed5571e7.PNG" width = "700" height = "500">
+
+<img src="https://user-images.githubusercontent.com/49023743/131736405-ecc2480c-03b5-4219-a8f3-fdec697200de.PNG" width = "700" height = "500">
+
 
 ### Player
 1. 오른쪽 컨트롤러의 엄지스틱을 사용하여 화면을 회전시킬 수 있습니다.
