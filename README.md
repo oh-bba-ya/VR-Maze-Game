@@ -22,7 +22,7 @@ VR-Maze-Game
 <img src="https://user-images.githubusercontent.com/49023743/131713105-bc3acfbc-a6d0-4660-8756-f21598824148.mp4">
 
 2. 컨트롤러를 통해 텔레포트와 기본이동을 할 수 있습니다.
-<img src="https://github.com/oh-bba-ya/VR-Maze-Game/issues/2#issue-985405026">
+<img src="https://user-images.githubusercontent.com/49023743/131715537-812a5e8b-096d-4cde-ac2b-cc2b3272f233.mp4">
 
 
 ## 클래스
