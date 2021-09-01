@@ -18,7 +18,7 @@ VR-Maze-Game
 4. VR , Inventory
 
 
-##클래스
+## 클래스
 ## Maze generator
 #### 설명
 1. 게임 실행시 자동적으로 미로가 생성되며 미로 형태는 랜덤으로 생성됩니다.
