@@ -24,7 +24,7 @@ VR-Maze-Game
 2. 컨트롤러를 통해 텔레포트와 기본이동을 할 수 있습니다.
 <img src="https://user-images.githubusercontent.com/49023743/131715537-812a5e8b-096d-4cde-ac2b-cc2b3272f233.mp4">
 
-3. Trigger 버튼을 통해 무기를 사용할 수 있습니다.
+3. Trigger 버튼을 통해 무기를 사용할 수 있습니다. 사용하는 무기들은 오른쪽 허벅지, 왼쪽 허벅지 , 왼쪽 어깨 뒤에 인벤토리가 존재하며 무기들을 저장하고 가져올 수 있습니다.
 <img src="https://user-images.githubusercontent.com/49023743/131731976-da523144-3c86-411b-b223-f683a5c58a3e.mp4">
 
 <img src="https://user-images.githubusercontent.com/49023743/131731983-752bef6e-df3b-4a0a-9dd7-7bb03ffef8d9.mp4">
