@@ -633,4 +633,200 @@ Player의 Weapon
     }
 
 ~~~
+
+### Grenade.cs
+Player의 Weapon 수류탄
+
+1. CookGrenade
+~~~
+    /// <summary>
+    /// 수류탄 Set (카운트 다운 시작) , Trigger 버튼 클릭 후 나타남.
+    /// </summary>
+    public void CookGrenade()
+    {
+        // 이미 수류탄이 Cooking 이라면 , 처리를 종료
+        if (m_Cooking)
+        {
+            return;
+        }
+
+        m_Cooking = true;
+        m_GrenadeText.text = "Cooking";
+        // 지연 시간뒤에 Explode를 실행.
+        Invoke("Explode",m_TimeToExploade);
+
+    }
+~~~
+
+2. Explode
+~~~
+    /// <summary>
+    /// 실제 폭발 처리를 하는 부분.
+    /// </summary>
+    private void Explode()
+    {
+        // 입력한 position 기준으로 입력한 Radius만큼 반지름을 가진 구를 그린 후 거기에 겹치는 모든 충돌체들을 가져온다.
+        // m_TargetLayer을 입력함으로써 설정한 Layer에 해당하는 충돌체들을 가져온다.
+        Collider[] colliders = Physics.OverlapSphere(transform.position, m_ExplosionRadius,m_TargetLayer);
+
+
+        // 감지된 충돌체들중 IDamageable을 가지고 있다면 데미지를 실제로 준다.
+        for(int i = 0; i < colliders.Length; i++)
+        {
+            IDamageable target = colliders[i].GetComponent<IDamageable>();
+
+            if(target != null)
+            {
+                target.OnDamage(m_Damage);
+            }
+        }
+
+        // 파티클 효과를 생성 재생
+        ParticleSystem explosionEffect = Instantiate(m_ExplosionEffectPrefab, transform.position, transform.rotation);
+        explosionEffect.Play();
+
+        // 폭발 소리 재생.
+        m_ExplosionAudioSource.clip = m_ExplosionClip;
+        m_ExplosionAudioSource.Play();
+
+        // ParticleSystem.main.duration 파티클이 가지고 있는 지속 유지시간. 후 파괴
+        Destroy(explosionEffect.gameObject, explosionEffect.main.duration);
+
+        // 수류탄 자시 자신을 파괴
+        Destroy(gameObject);
+    }
+~~~
+
+
+### EnemyAi.cs , MoveAgent.cs 
+Enemy의 Navmesh를 이용한 움직임 구현
+
+1. Enemy State 관리 (Trace , Patrol, Attack , Die)
+~~~
+    private void OnEnable()
+    {
+        StartCoroutine(CheckState());
+        StartCoroutine(Action());
+    }
+
+    IEnumerator Action()
+    {
+        // 적 캐릭터가 사망할 때까지 무한 루프.
+        while (!m_IsDie)
+        {
+            yield return m_WaitSecond;
+
+            switch (state)
+            {
+                case State.PATROL:
+                    // 총알 발사 정지
+                    m_EnemyFire.isFire = false;
+                    m_MoveAgent.patrolling = true;
+                    m_Animator.SetBool(hashMove, true);
+                    break;
+
+                case State.TRACE:
+                    m_EnemyFire.isFire = false;
+                    m_MoveAgent.TraceTarget = m_PlayerTr.position;
+                    m_Animator.SetBool(hashMove, false);
+                    m_Animator.SetBool(hashRun, true);
+                    break;
+
+                case State.ATTACK:
+                    m_MoveAgent.Stop();
+                    m_Animator.SetBool(hashMove, false);
+                    m_Animator.SetBool(hashRun, false);
+                    if (m_EnemyFire.isFire == false) m_EnemyFire.isFire = true;
+                    break;
+
+                case State.DIE:
+                    m_MoveAgent.Stop();
+                    m_EnemyFire.isFire = false;
+                    break;
+            }
+        }
+    }
+
+    IEnumerator CheckState()
+    {
+        while (!m_IsDie)
+        {
+            if (state == State.DIE) yield break;
+
+            float dis = Vector3.Distance(m_PlayerTr.position, m_EnemyTr.position);
+
+            if (dis <= m_AttackDis)
+            {
+                RaycastHit hit;
+                Debug.DrawRay(m_FireTransform.position, m_FireTransform.forward * m_AttackDis, Color.blue, 0.3f);
+                
+                if(Physics.Raycast(m_FireTransform.position,m_FireTransform.forward, out hit, m_AttackDis))
+                {
+                    state = State.ATTACK;
+
+                }          
+            }
+            else if (dis <= m_TraceDis)
+            {
+                state = State.TRACE;
+            }
+            else
+            {
+                state = State.PATROL;
+            }
+
+            yield return m_WaitSecond;
+        }
+    }
+
+~~~
+
+
+2. Property
+~~~
+    // Patrolling 프로퍼티 정의
+    public bool patrolling
+    {
+        get { return m_Patolling; }
+        set
+        {
+            m_Patolling = value;
+            if (m_Patolling)
+            {
+                m_Agent.speed = m_PatrollerSpeed;
+                // 순찰 상태의 회전계수
+                m_Damping = 1.0f;
+                MoveWayPoint();
+            }
+        }
+    }
     
+        public Vector3 TraceTarget
+    {
+        get { return m_TraceTarget; }
+        set
+        {
+            m_TraceTarget = value;
+            m_Agent.speed = m_TraceSpeed;
+            // 추적 상태의 회전 계수.
+            m_Damping = 7.0f;
+            TraceTargetFunction(m_TraceTarget);
+        }
+    }
+
+    public float speed
+    {
+        get { return m_Agent.velocity.magnitude;  }
+    }
+
+
+
+
+    void TraceTargetFunction(Vector3 pos)
+    {
+        if (m_Agent.isPathStale) return;
+
+        m_Agent.destination = pos;
+        m_Agent.isStopped = false;
+    }
+~~~
