@@ -27,29 +27,29 @@ VR-Maze-Game
 
 #### Code
 1. BatchCells
-    /// <summary>
-    /// 입력받은 Width , height 만큼 Cell 생성.
-    /// </summary>
-    private void BatchCells()
-    {
-        cellMap = new Cell[width, height];
-        cellHisttoryStack = new Stack<Cell>();
+/// <summary>
+/// 입력받은 Width , height 만큼 Cell 생성.
+/// </summary>
+private void BatchCells()
+{
+    cellMap = new Cell[width, height];
+    cellHisttoryStack = new Stack<Cell>();
   
 
-        for (int x = 0; x < width; x++)
+    for (int x = 0; x < width; x++)
+    {
+        for(int y = 0; y < height; y++)
         {
-            for(int y = 0; y < height; y++)
-            {
-                Cell _cell = Instantiate<Cell>(cellPrefab, this.transform);
-                _cell.index = new Vector2Int(x, y);
-                _cell.name = "cell_" + x + "_" + y;
-                _cell.transform.localPosition = new Vector3(x * 5, 0, y * 5);                   // Maze 부모 객체 위치에 기반해서 생성.
+            Cell _cell = Instantiate<Cell>(cellPrefab, this.transform);
+            _cell.index = new Vector2Int(x, y);
+            _cell.name = "cell_" + x + "_" + y;
+            _cell.transform.localPosition = new Vector3(x * 5, 0, y * 5);                   // Maze 부모 객체 위치에 기반해서 생성.
 
-                cellMap[x, y] = _cell;
+            cellMap[x, y] = _cell;
                 
-            }
         }
     }
+}
   
   2. MakeMaze
     /// <summary>
