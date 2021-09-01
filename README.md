@@ -45,6 +45,12 @@ VR-Maze-Game
 
 ### Enemy
 
+<img src="https://user-images.githubusercontent.com/49023743/131748346-a7f1d996-cec4-4d1f-8113-1e6500f8411a.mp4">
+
+
+<img src="https://user-images.githubusercontent.com/49023743/131748351-f91600e1-9342-44ae-be47-e5976c932983.mp4">
+
+
 ## 클래스
 ### Cell.cs
 
@@ -857,3 +863,12 @@ Enemy의 Navmesh를 이용한 움직임 구현
         m_Agent.isStopped = false;
     }
 ~~~
+
+
+## Epilogue
+
+**1. 프로젝트를 진행하면서 어려웠 던 점**
+VR 프로젝트를 혼자 진행하면서 기획부터 동영상 편집을 통해 게임 소개 영상까지 모든걸 혼자하려다 보니 전체적인 프로젝트 퀄리티가 떨어졌습니다.  
+또한 Oculus를 사용한 프로젝트를 하다보니 Unity 와 Oculus를 연동하는걸 시작으로 모든것이 튜토리얼 영상을 보고 제작하며 필요한 기능들을 단순히 익히며 하나둘씩 저의 프로젝트에 적용하면서 많은 시간이 소요되었습니다.
+
+**2. 깨달은 점**
