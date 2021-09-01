@@ -416,3 +416,51 @@ Object pooling을 사용하여 Enemy Prefabs 할당하고 파괴하는 대신, �
         StartCoroutine(CoroutineEnemySpawn());
     }
 ~~~
+
+2. Object Pooling
+~~~
+    public void InsertQueue(GameObject p_Object)
+    {
+        m_MonsterQueue.Enqueue(p_Object);
+        p_Object.SetActive(false);
+    }
+
+    public GameObject GetQueue()
+    {
+        GameObject t_Object = m_MonsterQueue.Dequeue();
+        t_Object.SetActive(true);
+
+        return t_Object;
+    }
+~~~
+
+3. CoroutineEnemySpawn()
+~~~
+    /// <summary>
+    /// 코루틴을 통한 적 생성.
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator CoroutineEnemySpawn()
+    {
+        while (!isGameOver)
+        {
+            if (m_CurMonster < m_MaxMonster)
+            {
+                yield return new WaitForSeconds(m_SpanwTime);
+                int idx = Random.Range(0, 5);
+                Transform pos = m_SpawnPoints[idx].transform;
+                Debug.Log("name : " + pos.name);
+                GameObject t_Object = GetQueue();
+                t_Object.transform.position = pos.position;
+                ++m_CurMonster;
+                Debug.Log("Create");
+            }
+            else
+            {
+                yield return null;
+            }
+        }
+
+
+    }
+~~~
