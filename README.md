@@ -29,6 +29,8 @@ VR-Maze-Game
 
 <img src="https://user-images.githubusercontent.com/49023743/131731983-752bef6e-df3b-4a0a-9dd7-7bb03ffef8d9.mp4">
 
+<img src="https://user-images.githubusercontent.com/49023743/131732890-cea9c189-d916-470d-9db2-7862896d5440.mp4">
+
 ## 클래스
 ### Cell.cs
 
