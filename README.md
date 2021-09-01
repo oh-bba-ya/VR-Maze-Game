@@ -395,3 +395,24 @@ private void BatchCells()
 ~~~
 void OnDamage(float damageAmount);
 ~~~
+
+### EnemySpawn
+Object pooling을 사용하여 Enemy Prefabs 할당하고 파괴하는 대신, 필요할 때만 Queue에서 GetQueue()함수를  사용하고 , Player Gun에 의해 사라진 개체는 InsertQueue() 함수를 사용하여 Enqueue하였다.
+
+1. Queue Initialize
+~~~
+    void Start()
+    {
+        instance = this;
+
+        for(int i = 0; i < m_MaxMonster; i++)
+        {
+            GameObject t_Object = Instantiate(m_MonsterPrefab, this.gameObject.transform);
+            m_MonsterQueue.Enqueue(t_Object);
+            t_Object.SetActive(false);
+        }
+
+
+        StartCoroutine(CoroutineEnemySpawn());
+    }
+~~~
