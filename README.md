@@ -80,7 +80,7 @@ VR-Maze-Game
     }
   
   3. GetNeighborCells
-  /// <summary>
+    /// <summary>
     /// 주변(기준 cell 의 상하좌우)을 탐색하는 함수.
     /// </summary>
     /// <param name="cell"> 기준 </param>
