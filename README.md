@@ -19,7 +19,7 @@ VR-Maze-Game
 
 #### 조작 방법
 1. 오른쪽 컨트롤러의 엄지스틱을 사용하여 화면을 회전시킬 수 있습니다.
-<img src="https://github.com/oh-bba-ya/VR-Maze-Game/issues/1#issue-985385689">
+<img src="https://user-images.githubusercontent.com/49023743/131713105-bc3acfbc-a6d0-4660-8756-f21598824148.mp4">
 
 
 
