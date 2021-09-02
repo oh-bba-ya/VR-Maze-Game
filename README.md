@@ -431,7 +431,7 @@ void OnDamage(float damageAmount);
 ~~~
 
 ### EnemySpawn.cs
-Object pooling을 사용하여 Enemy Prefabs 할당하고 파괴하는 대신, 필요할 때만 Queue에서 GetQueue()함수를  사용하고 , Player Gun에 의해 사라진 개체는 InsertQueue() 함수를 사용하여 Enqueue하였다.
+Object pooling을 사용하여 Enemy Prefabs 할당하고 파괴하는 대신, 필요할 때만 Queue에서 GetQueue()함수를  사용하고 , Player Gun에 의해 사라진 개체는 InsertQueue() 함수를 사용하여 Enqueue하였습니다.
 
 **1. Queue Initialize**
 ~~~
